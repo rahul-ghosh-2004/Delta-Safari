@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import { Menu, X, House, MapPinHouse, Package, Hotel, Activity, Images, RefreshCw, Contact } from "lucide-react";
+import { Link } from "react-router-dom"
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -54,9 +55,11 @@ function Header() {
           {/* <span className="text-sm text-gray-600 flex items-center gap-1">
             🇮🇳 India ▼
           </span> */}
+          <Link to={"/auth"}>
           <button className="bg-blue-500 text-white px-4 py-1.5 rounded-full text-sm font-semibold cursor-pointer">
             Login or Signup
           </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -90,9 +93,11 @@ function Header() {
             <span className="text-sm text-gray-600">Contact Support ▼</span>
             <span className="text-sm text-gray-600">🇮🇳 India ▼</span>
           </div>
+          <Link to={"/auth"}>
           <button className="w-full mt-3 bg-blue-500 text-white py-2 rounded-full text-sm font-semibold cursor-pointer">
             Login or Signup
           </button>
+          </Link>
         </div>
       )}
     </header>
