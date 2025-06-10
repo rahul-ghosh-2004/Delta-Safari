@@ -1,12 +1,12 @@
 import React from 'react'
-import TrendingDestinations from '@/components/TrendingDestinations'
-import TravellersFavourite from '@/components/TravellersFavourite'
-import HolidayPackages from '@/components/HolidayPackages'
-import HolidayThemes from '@/components/HolidayThemes'
-import HiddenGems from '@/components/HiddenGems'
-import TravellersTestimonials from '@/components/TravellersTestimonials'
-import BookingBenefits from '@/components/BookingBenefits'
-import TrustpilotSlider from '@/components/TrustPilotSlider'
+import TrendingDestinations from '@/components/Home/TrendingDestinations'
+import TravellersFavourite from '@/components/Home/TravellersFavourite'
+import HolidayPackages from '@/components/Home/HolidayPackages'
+import HolidayThemes from '@/components/Home/HolidayThemes'
+import HiddenGems from '@/components/Home/HiddenGems'
+import TravellersTestimonials from '@/components/Home/TravellersTestimonials'
+import BookingBenefits from '@/components/Home/BookingBenefits'
+import TrustpilotSlider from '@/components/Home/TrustPilotSlider'
 
 function Home() {
   return (
