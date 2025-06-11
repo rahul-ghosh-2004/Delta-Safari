@@ -7,6 +7,7 @@ import Auth from './components/Auth/Auth'
 import Home from './pages/Home/Home'
 import Hotels from './pages/Hotels/Hotels'
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/hotels",
         element: <Hotels />
-      }
+      },
     ]
   },
   {

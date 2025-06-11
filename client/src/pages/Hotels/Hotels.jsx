@@ -30,32 +30,3 @@ export default Hotels;
 
 
 
-
-
-
-// import FAQs from "@/components/Hotels/FAQ's";
-// import Filters from "@/components/Hotels/Filters";
-// import HotelsList from "@/components/Hotels/hotelslist";
-// import React from "react";
-
-
-// function Hotels() {
-//     return (
-//         <div>
-//             <section>
-//                 <HotelsList />
-//             </section>
-//             <section>
-//                 <FAQs />
-//             </section>
-//             <section>
-//                 <Filters />
-//             </section>
-//         </div>
-//     )
-// }
-
-      
-
-// export default Hotels;
-

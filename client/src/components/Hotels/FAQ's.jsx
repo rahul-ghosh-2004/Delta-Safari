@@ -74,33 +74,3 @@ const FAQs = () => {
 
 export default FAQs;
 
-
-
-
-
-
-// import React from 'react'
-
-// const FAQs = () => {
-//   return (
-//     <div>
-//       <div className="mt-8">
-//         <h2 className="text-xl font-semibold mb-2">FAQ's</h2>
-//         <details className="border rounded-lg mb-2">
-//           <summary className="cursor-pointer px-4 py-2 font-medium">Q1. Where Can I Get Affordable Luxury Hotels In Delhi?</summary>
-//           <p className="px-4 py-2 text-sm text-gray-600">You can find them in central and south Delhi with filters applied.</p>
-//         </details>
-//         <details className="border rounded-lg mb-2">
-//           <summary className="cursor-pointer px-4 py-2 font-medium">Q2. What Are The Best Hotels To Stay In Delhi?</summary>
-//           <p className="px-4 py-2 text-sm text-gray-600">Mehra Residency, Hotel Rivasa, and Amigos Hostel are great options.</p>
-//         </details>
-//         <details className="border rounded-lg mb-2">
-//           <summary className="cursor-pointer px-4 py-2 font-medium">Q3. How To Book The Best Hotel In Delhi For Two Days?</summary>
-//           <p className="px-4 py-2 text-sm text-gray-600">Use the filters and sort by user ratings and price.</p>
-//         </details>
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default FAQs
