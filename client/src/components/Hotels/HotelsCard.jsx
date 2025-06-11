@@ -4,14 +4,22 @@ import {
   Eye,
   CheckCircle,
 } from "lucide-react";
+import { Link } from "react-router-dom"
 
 const HotelCard = ({ hotel }) => {
-  
+
+  const [hotelData, setHotelData] = React.useState({})
+
+  const addHotelData = (e) => {
+    e.preventDefault()
+    
+  }
+
   return (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col md:flex-row p-4 gap-4">
       {/* Image Section */}
       <div className="md:w-1/3 w-full">
-      
+
         {/* Main Image */}
         <img
           src={hotel.images[0]}
@@ -93,9 +101,11 @@ const HotelCard = ({ hotel }) => {
           <p className="text-xs text-gray-500">+ ₹{hotel.tax} Taxes & fees</p>
           <p className="text-xs text-gray-400">Per Night</p>
         </div>
-        <button className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-5 rounded-full mt-3 text-sm font-semibold">
-          View Room
-        </button>
+        <Link to={"/hotel-overview"} hotel={ hotel }>
+          <button className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-5 rounded-full mt-3 text-sm font-semibold">
+            View Room
+          </button>
+        </Link>
         <p className="text-xs text-gray-600 mt-2">
           <span className="text-blue-600 cursor-pointer">Login</span> &{" "}
           <span className="text-blue-700 font-semibold cursor-pointer">Save More</span>
