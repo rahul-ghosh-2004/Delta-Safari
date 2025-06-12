@@ -6,14 +6,14 @@ import FAQs from "@/components/Hotels/FAQ's";
 const Hotels = () => {
   return (
     <div className="max-w-7xl mx-auto px-4">
-      <div className="flex flex-col lg:flex-row gap-6">
+      <div className="flex flex-col sm:flex-row gap-6 sm:items-start overflow-x-auto sm:overflow-visible">
         {/* Filters Sidebar */}
-        <div className="w-full lg:w-1/4">
+        <div className="sm:w-1/3 md:w-1/4 min-w-[250px] shrink-0">
           <Filters />
         </div>
 
         {/* Hotel List */}
-        <div className="w-full lg:w-3/4 space-y-12">
+        <div className="flex-1 space-y-12">
           <HotelsList />
         </div>
       </div>

@@ -101,7 +101,7 @@ const HotelCard = ({ hotel }) => {
           <p className="text-xs text-gray-500">+ ₹{hotel.tax} Taxes & fees</p>
           <p className="text-xs text-gray-400">Per Night</p>
         </div>
-        <Link to={"/hotel-overview"} hotel={ hotel }>
+        <Link to={"/hotel-overview"} state={{ hotel }}>
           <button className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-5 rounded-full mt-3 text-sm font-semibold">
             View Room
           </button>

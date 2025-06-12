@@ -17,10 +17,10 @@ const hotels = [
       promocode: "EMTHOTELS Promocode Applied",
       images: [
         "https://img.easemytrip.com/emthotel-519654/8/m/l/446930_0.jpg",
-        "https://img.easemytrip.com/emthotel-519654/8/m/l/446930_0.jpg",
-        "https://img.easemytrip.com/emthotel-519654/8/m/l/446930_0.jpg",
-        "https://img.easemytrip.com/emthotel-519654/8/m/l/446930_0.jpg",
-        "https://img.easemytrip.com/emthotel-519654/8/m/l/446930_0.jpg",
+        "https://img.easemytrip.com/EMTHotel-519654/8/g/l/446930_18.jpg",
+        "https://img.easemytrip.com/EMTHotel-519654/8/g/l/446930_2.jpg",
+        "https://img.easemytrip.com/EMTHotel-519654/8/g/l/446930_9.jpg",
+        "https://img.easemytrip.com/EMTHotel-519654/8/g/l/446930_15.jpg",
       ],
     },
     {
