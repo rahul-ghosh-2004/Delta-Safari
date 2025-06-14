@@ -7,6 +7,7 @@ import Auth from './components/Auth/Auth'
 import Home from './pages/Home/Home'
 import Hotels from './pages/Hotels/Hotels'
 import HotelOverview from './pages/HotelOverview/HotelOverview'
+import HotelReview from './pages/HotelReview/HotelReview'
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/hotel-overview",
         element: <HotelOverview />
+      },
+       {
+        path: "/hotel-review", // 
+        element: <HotelReview />
       }
     ]
   },

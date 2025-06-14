@@ -3,10 +3,13 @@ import { useLocation } from "react-router-dom";
 import { MapPin, Users, CheckCircle, Star, ShieldCheck, Shirt, Car, Briefcase, Phone, Newspaper, PlusCircle, Wifi, Snowflake, Waves, Bed, Dumbbell, Tv2, Plus, Bath } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 const HotelOverview = () => {
   const location = useLocation();
   const hotel = location.state?.hotel;
+  const navigate = useNavigate();
+
 
   if (!hotel) {
     return <div>Loading or Hotel not found</div>;
@@ -117,9 +120,13 @@ const HotelOverview = () => {
               <span className="text-sm font-semibold text-green-600">Book with ₹0</span>
             </div>
 
-            <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-full font-medium text-sm">
+            <Button
+              onClick={() => navigate("/hotel-review", { state: { hotel } })}
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-full font-medium text-sm"
+            >
               Book Now
-            </button>
+            </Button>
+
           </div>
         </div>
 
