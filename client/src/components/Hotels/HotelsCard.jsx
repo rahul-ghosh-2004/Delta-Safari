@@ -5,14 +5,18 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { Link } from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { addHotelInfo } from "@/app/features/hotelInfo.js";
 
 const HotelCard = ({ hotel }) => {
+
+  const dispatch = useDispatch()
 
   const [hotelData, setHotelData] = React.useState({})
 
   const addHotelData = (e) => {
-    e.preventDefault()
-    
+    // e.preventDefault()
+    dispatch(addHotelInfo(hotel))
   }
 
   return (
@@ -101,7 +105,7 @@ const HotelCard = ({ hotel }) => {
           <p className="text-xs text-gray-500">+ ₹{hotel.tax} Taxes & fees</p>
           <p className="text-xs text-gray-400">Per Night</p>
         </div>
-        <Link to={"/hotel-overview"} state={{ hotel }}>
+        <Link to={"/hotel-overview"} onClick={addHotelData}>
           <button className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-5 rounded-full mt-3 text-sm font-semibold">
             View Room
           </button>

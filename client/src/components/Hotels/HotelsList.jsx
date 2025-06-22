@@ -22,6 +22,9 @@ const hotels = [
         "https://img.easemytrip.com/EMTHotel-519654/8/g/l/446930_9.jpg",
         "https://img.easemytrip.com/EMTHotel-519654/8/g/l/446930_15.jpg",
       ],
+      facilities: [],
+      day: 2,
+      night: 3
     },
     {
       name: "Hotel Rivasa Regency",

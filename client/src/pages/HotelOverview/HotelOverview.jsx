@@ -4,28 +4,32 @@ import { MapPin, Users, CheckCircle, Star, ShieldCheck, Shirt, Car, Briefcase, P
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const HotelOverview = () => {
-  const location = useLocation();
-  const hotel = location.state?.hotel;
+  // const location = useLocation();
+  // const hotel = location.state?.hotel;
   const navigate = useNavigate();
+  const hotelData = useSelector(state => state?.hotel?.payload)
+
+  console.log(hotelData);
 
 
-  if (!hotel) {
+  if (!hotelData) {
     return <div>Loading or Hotel not found</div>;
   }
 
   return (
     <div>
-      <h2>{hotel.name}</h2>
-      <p>{hotel.location}</p>
+      <h2>{hotelData.name}</h2>
+      <p>{hotelData.location}</p>
       <div className="max-w-6xl mx-auto px-4 py-10">
         {/* Hotel & Room Images Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           {/* Main Image */}
           <div className="aspect-[4/3] w-full overflow-hidden rounded-xl shadow-md">
             <img
-              src={hotel?.images[0]}
+              src={hotelData?.images[Number(0)]}
               alt="Hotel"
               className="w-full h-full object-cover"
             />
@@ -33,7 +37,7 @@ const HotelOverview = () => {
 
           {/* 2x2 Thumbnail Grid */}
           <div className="grid grid-cols-2 grid-rows-2 gap-2">
-            {hotel?.images?.slice(1, 5).map((img, i) => (
+            {hotelData?.images?.slice(1, 5).map((img, i) => (
               <div key={i} className="aspect-[4/3] w-full overflow-hidden rounded-xl shadow-md">
                 <img
                   src={img}
@@ -51,19 +55,19 @@ const HotelOverview = () => {
           <div className="md:col-span-2 space-y-4">
             <div className="space-y-1">
               <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
-                Hotel Signature Grand
+                {hotelData?.name}
               </h1>
               <p className="text-sm text-gray-500 flex items-center gap-1">
                 <MapPin className="w-4 h-4 text-gray-400" />
-                Hari Nagar, West Delhi, India
+                {hotelData?.location}
               </p>
               <div className="flex items-center space-x-2 text-yellow-500 text-sm">
                 <span>★★★★☆</span>
-                <span className="text-gray-500">(98 reviews)</span>
+                <span className="text-gray-500">{hotelData?.reviewCount} Reviews</span>
               </div>
               <div className="flex items-center text-green-600 text-sm font-medium gap-2">
                 <CheckCircle className="w-4 h-4" />
-                Free Breakfast Included
+                {hotelData?.perk} Included
               </div>
             </div>
 

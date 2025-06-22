@@ -8,6 +8,8 @@ import Home from './pages/Home/Home'
 import Hotels from './pages/Hotels/Hotels'
 import HotelOverview from './pages/HotelOverview/HotelOverview'
 import HotelReview from './pages/HotelReview/HotelReview'
+import { Provider } from 'react-redux'
+import hotelInfoStore from './app/stores/hotelInfo'
 
 
 const router = createBrowserRouter([
@@ -41,6 +43,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <Provider store={hotelInfoStore}>
+      <RouterProvider router={router}/>
+    </Provider>
   </StrictMode>,
 )
