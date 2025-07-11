@@ -26,6 +26,10 @@ const signup = AsyncHandler(async (req, res) => {
         password
     } = req.body
 
+    if (!fullname || !email || !phone || !password) {
+        throw new ErrorHandler(400, "All fields are required!")
+    }
+
     if (fullname?.trim() === "") {
         return res
         .status(400)
@@ -38,7 +42,7 @@ const signup = AsyncHandler(async (req, res) => {
         throw new ErrorHandler(400, "Invalid email! :(")
     }
 
-    if (phone?.trim()?.length != 10 || !isValidMobileNumber(phone?.trim())) {
+    if (phone?.trim() == "") {
         throw new ErrorHandler(400, "Incorrect mobile number! :(")
     }
 
@@ -84,7 +88,7 @@ const signup = AsyncHandler(async (req, res) => {
 })
 
 const login = AsyncHandler(async (req, res) => {
-    const { id, password } = req.body
+    const { id, password } = req?.body
 
     if (!id || !password) {
         throw new ErrorHandler(400, "All fields are required!")
@@ -108,9 +112,49 @@ const login = AsyncHandler(async (req, res) => {
             }
         ]
     })
+
+    if (!userData) {
+        throw new ErrorHandler(400, "User not found! Go for account creation!")
+    }
+
+    const isValidPassword = await userData.validatePassword(password)
+
+    if (!isValidPassword) {
+        throw new ErrorHandler(400, "Invalid password!")
+    }
+
+    const accessToken = userData.generateToken()
+
+    const options = {
+        "httpOnly": true,
+        "secure": true
+    }
+
+    return res
+    .status(200)
+    .cookie("accessToken", accessToken, options)
+    .json(
+        new ResponseHandler(200, {}, "User logged in successfully!")
+    )
 })
+
+const logout = AsyncHandler(async (req, res) => {
+    const options = {
+        "httpOnly": true,
+        "secure": true
+    }
+
+    return res
+    .status(200)
+    .clearCookie("accessToken", options)
+    .json(
+        new ResponseHandler(200, {}, "User logged out successfully!")
+    )
+})
+
 
 export {
     signup,
-    login
+    login,
+    logout
 }
