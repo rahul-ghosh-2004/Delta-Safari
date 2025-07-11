@@ -10,6 +10,9 @@ import HotelOverview from './pages/HotelOverview/HotelOverview'
 import HotelReview from './pages/HotelReview/HotelReview'
 import { Provider } from 'react-redux'
 import hotelInfoStore from './app/stores/hotelInfo'
+import Activities from './pages/Activity/Activities'
+import ActivityOverview from './pages/ActivityOverview/ActivityOverview'
+import ActivityReview from './pages/ActivityReview/ActivityReview'
 
 
 const router = createBrowserRouter([
@@ -32,6 +35,18 @@ const router = createBrowserRouter([
        {
         path: "/hotel-review", // 
         element: <HotelReview />
+      },
+      {
+        path: "/activity",
+        element: <Activities />
+      },
+      {
+        path: "/activities/:city",
+        element: <ActivityOverview />
+      },
+      {
+        path: "/activities/:city/:slug",
+        element: <ActivityReview />
       }
     ]
   },

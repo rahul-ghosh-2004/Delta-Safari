@@ -42,7 +42,7 @@ const favourites = [
 
 const TravellersFavourite = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="max-w-6xl mx-auto px-4 py-2">
       <div className="mb-8">
         <h2 className="text-3xl font-bold mb-1">Traveller's favourite</h2>
         <p className="text-muted-foreground text-sm">

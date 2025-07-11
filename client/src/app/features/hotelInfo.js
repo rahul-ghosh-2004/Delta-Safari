@@ -9,7 +9,7 @@ const hotelInfoSlice = createSlice({
     initialState: initialState,
     reducers: {
         addHotelInfo: (state, action) => {
-            state.hotel = action
+            state.hotel = action.payload
         }
     }
 })

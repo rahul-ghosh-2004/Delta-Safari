@@ -7,11 +7,15 @@ import HiddenGems from '@/components/Home/HiddenGems'
 import TravellersTestimonials from '@/components/Home/TravellersTestimonials'
 import BookingBenefits from '@/components/Home/BookingBenefits'
 import TrustpilotSlider from '@/components/Home/TrustPilotSlider'
+import HeroBannerSlider from '@/components/Home/HeroBannerSlider'
 
 function Home() {
   return (
     <div>
-      <section>
+       <section>
+        <HeroBannerSlider />
+      </section>
+      <section className='py-16'>
         <TrendingDestinations />
       </section>
       <section>
@@ -20,7 +24,7 @@ function Home() {
       <section>
         <HolidayPackages />
       </section>
-      <section>
+      <section className='py-16'>
         <HolidayThemes />
       </section>
       <section>
