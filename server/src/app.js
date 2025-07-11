@@ -32,7 +32,9 @@ app.use(express.urlencoded({
 
 
 import userRouter from "./routes/user.routes.js"
+import hotelRouter from "./routes/hotel.route.js"
 
 app.use("/api/v1/user", userRouter)
+app.use("/api/v1/hotel", hotelRouter)
 
 export default app
