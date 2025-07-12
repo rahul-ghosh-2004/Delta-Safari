@@ -13,6 +13,7 @@ import hotelInfoStore from './app/stores/hotelInfo'
 import Activities from './pages/Activity/Activities'
 import ActivityOverview from './pages/ActivityOverview/ActivityOverview'
 import ActivityReview from './pages/ActivityReview/ActivityReview'
+import CorporatePackages from './pages/CorporatePackages/CorporatePackages'
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/activities/:city/:slug",
         element: <ActivityReview />
+      },
+      {
+        path: "/corporatepackages",
+        element: <CorporatePackages />
       }
     ]
   },
