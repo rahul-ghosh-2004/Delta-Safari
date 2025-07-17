@@ -14,6 +14,7 @@ import Activities from './pages/Activity/Activities'
 import ActivityOverview from './pages/ActivityOverview/ActivityOverview'
 import ActivityReview from './pages/ActivityReview/ActivityReview'
 import CorporatePackages from './pages/CorporatePackages/CorporatePackages'
+import PackageDetails from './pages/PackageDetails/PackageDetails'
 
 
 const router = createBrowserRouter([
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/corporatepackages",
         element: <CorporatePackages />
+      },
+      {
+        path: "/corporatepackages/:slug",
+        element: <PackageDetails />
       }
     ]
   },

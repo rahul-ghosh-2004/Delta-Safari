@@ -15,7 +15,7 @@ function Home() {
        <section>
         <HeroBannerSlider />
       </section>
-      <section className='py-16'>
+      <section className='py-12'>
         <TrendingDestinations />
       </section>
       <section>
