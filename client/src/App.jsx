@@ -1,13 +1,14 @@
 import React from 'react'
-import Home from './pages/Home/Home.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import Header from './components/Header/Header.jsx'
 import { Outlet } from "react-router-dom"
+import ScrollToTop from './components/ScrollToTop.jsx'
 
-function App() {
+function App() {  
   return (
     <div>
       <Header />
+      <ScrollToTop /> 
       <Outlet />
       <Footer />
     </div>
