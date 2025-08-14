@@ -9,7 +9,7 @@ const createHotel = AsyncHandler(async (req, res) => {
         throw new ErrorHandler(401, "Unauthorised user!")
     }
     const {
-        name, location, descriptionAboutHotel, originalPrice, discount
+        name, location, descriptionAboutHotel, originalPrice, discount, bookWithZero, freeBreakfast, freeParking, freeCancellation, twentyFourHourFrontDesk, ac, bar, wifi, breakfast, laundry, gym, 
     } = req?.body
 
     if (!name || !location || !descriptionAboutHotel || !originalPrice || !discount) {
@@ -41,11 +41,11 @@ const createHotel = AsyncHandler(async (req, res) => {
     }
 
     let images = {
-        "image1": req?.files?.image1[Number(0)]?.path,
-        "image2": req?.files?.image2[Number(0)]?.path,
-        "image3": req?.files?.image3[Number(0)]?.path,
-        "image4": req?.files?.image4[Number(0)]?.path,
-        "image5": req?.files?.image5[Number(0)]?.path,
+        "image1": req?.files?.image1 ? req?.files?.image1[Number(0)]?.path : "",
+        "image2": req?.files?.image2 ? req?.files?.image2[Number(0)]?.path : "",
+        "image3": req?.files?.image3 ? req?.files?.image3[Number(0)]?.path : "",
+        "image4": req?.files?.image4 ? req?.files?.image4[Number(0)]?.path : "",
+        "image5": req?.files?.image5 ? req?.files?.image5[Number(0)]?.path : "",
     }
 
     let secureImageUrls = {
